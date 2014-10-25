@@ -20,23 +20,12 @@
   ],
   "dependencies": {
     "polymer": "Polymer/polymer#^0.4.2",
-    "service-worker-cache": "wibblymat/service-worker-cache#~0.0.7"
+    "service-worker-cache": "wibblymat/service-worker-cache#~0.0.7",
+    "core-animated-pages": "Polymer/core-animated-pages#master",
+    "paper-shadow": "Polymer/paper-shadow#master",
+    "font-roboto": "Polyner/font-roboto#master"
   },
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#^0.7.3"
-  },
-  "resolutions": {
-    "polymer": "~0.4.0",
-    "core-icons": ">=0.3.0 <1.0.0",
-    "core-meta": "^0.4.0",
-    "core-ajax": ">=0.4.0 <1.0.0",
-    "core-icon": "^0.4.0",
-    "core-icon-button": ">=0.4.0 <1.0.0",
-    "core-signals": "~0.4.0",
-    "polymer-test-tools": ">=0.4.0 <1.0.0",
-    "core-component-page": "^0.4.0",
-    "platform": "^0.4.0",
-    "core-iconset": "^0.4.0",
-    "core-iconset-svg": "^0.4.0"
   }
 }
