@@ -331,6 +331,7 @@ pre, code {
     font-family: 'Inconsolata'
 }
 
+/*
 sections > section {
     border-radius: 0;
     font-family: 'Roboto2', sans-serif;
@@ -369,7 +370,6 @@ sections > section:not(.nobackground)::before, sections > section:not(.nobackgro
 
 sections > section:not(.nobackground)::after {
     right: 40px;
-    /*background: url(../../images/io2014_icon_dark.png) no-repeat 100% 10px;*/
     background-size: contain;
     height: 60px;
     width: 75px;
@@ -402,3 +402,4 @@ section#who img {
     border: 7px solid #fff;
     box-shadow: 0 0 7px #797979
 }
+*/

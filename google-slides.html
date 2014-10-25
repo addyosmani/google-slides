@@ -1,4 +1,5 @@
 <link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="google-slide.html">
 
 <!-- Core -->
 <link rel="import" href="../core-icons/core-icons.html">
@@ -23,8 +24,8 @@ ServiceWorker powered offline slides with Polymer.
 ##### Example
 
     <google-slides transition="slide-from-bottom">
-      <section><div layout vertical center-justified>...</div></section>
-      <section><div layout vertical center-justified>...</div></section>
+      <google-slide>...</google-slide>
+      <google-slide>...</google-slide>
     </google-slides>
 
 @element google-slides
@@ -37,8 +38,8 @@ Adapted from UnBug's slide-page element.
 
 <polymer-element name="google-slides" on-keydown="{{keypressHandler}}" attributes="transition">
 	<template>
-
 		<link rel="stylesheet" href="google-slides.css"/>
+
 		<template>
 			<service-worker-cache></service-worker-cache>
 		</template>
@@ -47,7 +48,6 @@ Adapted from UnBug's slide-page element.
 		</core-animated-pages>
 
 		<section class="nav" layout horizontal end-justified>
-
 			<div layout horizontal>
 				<paper-fab start-justified icon="icons:arrow-back" id="preBtn" on-click="{{prePage}}">
 					<paper-shadow z="5"></paper-shadow>

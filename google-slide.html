@@ -1,0 +1,53 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+A single slide entry in a `google-slides` deck. You can either define
+a `google-slide` or use normal elements (e.g `<section>`).
+
+##### Example
+
+    <google-slide>
+      Slide content
+    </google-slide>
+
+@element google-slide
+@blurb A single slide entry in a `google-slides` deck.
+@status alpha
+
+-->
+<polymer-element name="google-slide" noscript>
+	<template>
+	<style>
+		:host {
+		    display: block;
+		}
+		:host section {
+		    width: 100%;
+		}
+
+		:host section > div {
+		    height: 100%;
+		    padding: 0 30px;
+		}
+
+		:host section.nav {
+		    position: absolute;
+		    bottom: 30px;
+		    left: 0;
+		}
+
+		:host section.nav > div {
+		    padding: 0 30px;
+		}
+
+		:host section.nav > div:first-child {
+		    padding-right: 0;
+		}			
+	</style>
+	    <section>
+	      <div layout vertical center-justified>
+	      	<content></content>
+	      </div>
+	    </section>
+	</template>
+</polymer-element>

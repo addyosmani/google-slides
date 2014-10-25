@@ -20,8 +20,7 @@
   ],
   "dependencies": {
     "polymer": "Polymer/polymer#^0.4.2",
-    "service-worker-cache": "wibblymat/service-worker-cache#~0.0.7",
-    "slide-page": "~0.0.2"
+    "service-worker-cache": "wibblymat/service-worker-cache#~0.0.7"
   },
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#^0.7.3"
