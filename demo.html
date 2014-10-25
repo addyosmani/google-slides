@@ -11,41 +11,25 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-  <title>seed-element Demo</title>
+  <title>google-slides Demo</title>
 
   <script src="../platform/platform.js"></script>
-  <link rel="import" href="../offline-slides/offline-slides.html">
+  <link rel="import" href="../google-slides/google-slides.html">
   <link rel="import" href="../font-roboto/roboto.html">
-  <style>
-    body {
-      font-family: 'RobotoDraft', 'Roboto', Helvetica, sans-serif;
-    }
-    .flipInY {
-      -webkit-animation-name: flipInY;
-              animation-name: flipInY;
-      -webkit-animation-duration: 1s;
-              animation-duration: 1s;
-      -webkit-animation-delay: 500ms;
-              animation-delay: 500ms;
-    }
-    .me {
-      border-radius: 500px;
-    }
-  </style>
+  <link rel="stylesheet" href="demo.css">
 
 </head>
 <body unresolved>
 
-  <offline-slides>
-    <section style="overflow: hidden;">
+  <google-slides>
+    <section style="overflow: hidden;" class="googlegreen">
       <div layout vertical center center-justified>
-      	<img class="flipInY" src="../slide-page/resources/images/p-logo.svg"/>
         <h1>Offline Polymer Slides</h1>
-        <p>Welcome To The ServiceWorker Slides!</p>
+        <p>&lt;google-slides&gt;</p>
       </div>
     </section>
     <section>
-      <div layout vertical center-justified>
+      <div layout vertical center-justified class="googlered">
       	<h1>Polymer</h1>
       	<p>@Polymer</p>
       	<p><a href="http://polymer-project.org">Polymer Project Docs</a></p>
@@ -54,7 +38,7 @@
     </section>
 
     <section>
-      <div layout vertical center-justified>
+      <div layout vertical center-justified class="googleyellow">
         <h1>Polymer</h1>
         <p>Core Elements</p>
         <p>Paper Elements(Material design)</p>
@@ -222,7 +206,7 @@
         <p><a target="_blank" href="https://github.com/Polymer">https://github.com/Polymer</a></p>
       </div>
     </section>
-  </offline-slides>
+  </google-slides>
 
 </body>
 </html>

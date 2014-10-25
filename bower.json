@@ -1,5 +1,5 @@
 {
-  "name": "offline-slides",
+  "name": "google-slides",
   "version": "0.0.0",
   "authors": [
     "Anonymous <anonymous@example.com>"
@@ -11,9 +11,9 @@
     "polymer",
     "seed"
   ],
-  "main": "offline-slides.html",
+  "main": "google-slides.html",
   "license": "MIT",
-  "homepage": "https://github.com/<USERNAME>/offline-slides/",
+  "homepage": "https://github.com/<USERNAME>/google-slides/",
   "ignore": [
     "/.*",
     "/tests/"
