@@ -23,9 +23,13 @@
     "service-worker-cache": "wibblymat/service-worker-cache#~0.0.7",
     "core-animated-pages": "Polymer/core-animated-pages#~0.4.2",
     "paper-shadow": "Polymer/paper-shadow#~0.4.2",
-    "font-roboto": "Polymer/font-roboto#~0.4.2"
+    "font-roboto": "Polymer/font-roboto#~0.4.2",
+    "paper-fab": "Polymer/paper-fab#~0.4.2"
   },
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#^0.7.3"
+  },
+  "resolutions": {
+    "font-roboto": "^0.4.0"
   }
 }
