@@ -13,16 +13,19 @@
 <link rel="import" href="../service-worker-cache/service-worker-cacheable-resource.html">
 
 <!--
-Element providing solution to no problem in particular.
+ServiceWorker powered offline slides with Polymer.
 
 ##### Example
 
-    <seed-element></seed-element>
+    <offline-slides>
+      <section><div layout vertical center-justified>...</div></section>
+      <section><div layout vertical center-justified>...</div></section>
+    </offline-slides>
 
-@element seed-element
-@blurb Element providing solution to no problem in particular.
+@element offline-slides
+@blurb ServiceWorker powered offline slides with Polymer.
 @status alpha
-@homepage http://polymerlabs.github.io/seed-element
+@homepage http://addyosmani.github.io/offline-slides
 -->
 
 <polymer-element name="offline-slides" extends="slide-page" attributes="notitle author" noscript>
