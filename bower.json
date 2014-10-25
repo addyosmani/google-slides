@@ -1,19 +1,19 @@
 {
   "name": "google-slides",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "authors": [
-    "Anonymous <anonymous@example.com>"
+    "Addy Osmani <addyosmani@gmail.com>"
   ],
-  "description": "Element providing solution to no problem in particular.",
+  "description": "A slide deck featuring offline-support, powered by Service Worker.",
   "keywords": [
     "web-component",
     "web-components",
     "polymer",
-    "seed"
+    "slides"
   ],
   "main": "google-slides.html",
   "license": "MIT",
-  "homepage": "https://github.com/<USERNAME>/google-slides/",
+  "homepage": "https://github.com/addyosmani/google-slides/",
   "ignore": [
     "/.*",
     "/tests/"
@@ -21,9 +21,9 @@
   "dependencies": {
     "polymer": "Polymer/polymer#^0.4.2",
     "service-worker-cache": "wibblymat/service-worker-cache#~0.0.7",
-    "core-animated-pages": "Polymer/core-animated-pages#master",
-    "paper-shadow": "Polymer/paper-shadow#master",
-    "font-roboto": "Polyner/font-roboto#master"
+    "core-animated-pages": "Polymer/core-animated-pages#~0.4.2",
+    "paper-shadow": "Polymer/paper-shadow#~0.4.2",
+    "font-roboto": "Polyner/font-roboto#~0.4.2"
   },
   "devDependencies": {
     "web-component-tester": "Polymer/web-component-tester#^0.7.3"
