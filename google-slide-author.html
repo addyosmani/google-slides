@@ -1,0 +1,56 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+A social card with information for your talk.
+
+##### Example
+
+	<google-slide-author 
+	    avatar="resources/images/addy.jpg" 
+	    twitter="@addyosmani" 
+	    plus="+AddyOsmani">
+	</google-slide-author>
+
+@element google-slide-author.
+@blurb A social card with information for your talk.
+@status alpha
+
+-->
+<polymer-element name="google-slide-author" attributes="plus twitter avatar" noscript>
+	<template>
+	<style>
+		:host {
+		    display: block;
+		}
+
+		:host .twitter {
+			font-size: 0.8em;
+		}	
+
+		:host .plus {
+			line-height: 40px;
+		}
+
+		:host img {
+			border: 5px solid gray;
+			width: 90px;
+			border-radius: 50%;
+			margin: 25px;
+		}	
+	</style>
+	<div layout horizontal>
+		<div >
+		<template if="{{avatar.length > 0}}">
+			<img src="{{avatar}}">
+		</template>
+		</div>
+		
+		<div flex>	    
+		<p class="plus">{{plus}}</p>
+	    <p class="twitter">{{twitter}}</p>
+	    </div>
+	</div>
+
+
+	</template>
+</polymer-element>
