@@ -12,7 +12,7 @@
     display: block;
 }
 
-core-animated-pages {
+neon-animated-pages {
     position: absolute;
     top: 0px;
     right: 0;
@@ -92,6 +92,15 @@ core-animated-pages {
 }
 
 ::content p {
+    -webkit-animation-name: fadeInUp;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-delay: 0ms;
+    animation-name: fadeInUp;
+    animation-duration: 1s;
+    animation-delay: 0ms;
+}
+
+::content pre {
     -webkit-animation-name: fadeInUp;
     -webkit-animation-duration: 1s;
     -webkit-animation-delay: 0ms;

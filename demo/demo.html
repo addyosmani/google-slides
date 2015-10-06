@@ -13,32 +13,32 @@
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <title>google-slides Demo</title>
 
-  <script src="../platform/platform.js"></script>
-  <link rel="import" href="../google-slides/google-slides.html">
-  <link rel="import" href="../font-roboto/roboto.html">
+  <script src="../../webcomponentsjs/webcomponents-lite.min.js"></script>
+  <link rel="import" href="../../google-slides/google-slides.html">
+  <link rel="import" href="../../font-roboto/roboto.html">
   <link rel="stylesheet" href="demo.css">
 
 </head>
 <body unresolved>
 
   <google-slides>
-    <div is="google-slide" class="googlegreen" layout vertical center center-justified>
+    <div is="google-slide" class="googlegreen layout vertical center center-justified">
         <h1>&lt;google-slides&gt;</h1>
         <p>
-            <google-slide-author 
-                avatar="resources/images/addy.jpg" 
-                twitter="@addyosmani" 
-                plus="+AddyOsmani">
+            <google-slide-author
+                avatar="resources/images/wburgers.jpg"
+                twitter="@willemburgers"
+                plus="+WillemBurgers">
             </google-slide-author>
         </p>
     </div>
-    <google-slide class="googlered" layout vertical center center-justified>
+    <google-slide class="googlered layout vertical center center-justified">
       	<h1>Polymer</h1>
       	<p>@Polymer</p>
       	<p><a href="http://polymer-project.org">Polymer Project Docs</a></p>
       	<p>A presentation by someone</p>
     </google-slide>
-    <google-slide class="googleyellow" layout vertical center center-justified>
+    <google-slide class="googleyellow layout vertical center center-justified">
         <h1>Polymer</h1>
         <p>Core Elements</p>
         <p>Paper Elements(Material design)</p>
@@ -46,63 +46,61 @@
         <p>Polymer Designer</p>
         <p>Chrome Dev Editor</p>
     </google-slide>
-    <google-slide class="googleblue" layout vertical center center-justified>
+    <google-slide class="googleblue layout vertical center center-justified">
         <video controls autobuffer onclick="this.play();" height="500"><source src="resources/videos/Welcome-to-the-World-of-Tomorrow.mp4" type="video/mp4"></video>
     </google-slide>
-    <google-slide layout vertical center center-justified>
+    <google-slide class="layout vertical center center-justified">
         <h1>Core Elements</h1>
         <p><a target="_blank" href="http://www.polymer-project.org/docs/elements/core-elements.html">www.polymer-project.org/docs/elements/core-elements.html</a></p>
     </google-slide>
-    <google-slide layout vertical center center-justified>
-        <div layout horizontal center-justified>
-          <div flex one layout vertical start-justified>
-            <h2>Visual</h2>
-            <p><code>&lt;core-header-panel&gt;</code><a target="_blank" href="bower_components/core-header-panel/">[^]</a></p>
-            <p><code>&lt;core-toolbar&gt;</code><a target="_blank" href="bower_components/core-toolbar/">[^]</a></p>
-            <p><code>&lt;core-drawer-panel&gt;</code><a target="_blank" href="bower_components/core-drawer-panel/">[^]</a></p>
-            <p><code>&lt;core-menu&gt;</code><a target="_blank" href="bower_components/core-menu/">[^]</a></p>
-            <p><code>&lt;core-icon&gt;</code><a target="_blank" href="bower_components/core-icon/">[^]</a></p>
-            <p><code>&lt;core-overlay&gt;</code><a target="_blank" href="bower_components/core-overlay/">[^]</a></p>
-            <p><code>&lt;core-animated-pages&gt;</code><a target="_blank" href="bower_components/core-animated-pages/">[^]</a></p>
-          </div>
-          <div layout vertical start-justified>
-            <h2>Non-visual</h2>
-            <p><code>&lt;core-ajax&gt;</code><a target="_blank" href="bower_components/core-ajax/">[^]</a></p>
-            <p><code>&lt;core-localstorage&gt;</code><a target="_blank" href="../../io2014-codelabs/unbug/PolymerMobileCodelab/">[^]</a></p>
-            <p><code>&lt;core-range&gt;</code></p>
-            <p><code>&lt;core-media-query&gt;</code></p>
-            <p><code>&lt;core-iconset&gt;</code></p>
-          </div>
+    <google-slide class="layout vertical center center-justified">
+      <div class="layout horizontal center-justified">
+        <div class="flex one layout vertical start-justified">
+          <h2>Visual</h2>
+          <p><code>&lt;core-header-panel&gt;</code><a target="_blank" href="bower_components/core-header-panel/">[^]</a></p>
+          <p><code>&lt;core-toolbar&gt;</code><a target="_blank" href="bower_components/core-toolbar/">[^]</a></p>
+          <p><code>&lt;core-drawer-panel&gt;</code><a target="_blank" href="bower_components/core-drawer-panel/">[^]</a></p>
+          <p><code>&lt;core-menu&gt;</code><a target="_blank" href="bower_components/core-menu/">[^]</a></p>
+          <p><code>&lt;core-icon&gt;</code><a target="_blank" href="bower_components/core-icon/">[^]</a></p>
+          <p><code>&lt;core-overlay&gt;</code><a target="_blank" href="bower_components/core-overlay/">[^]</a></p>
+          <p><code>&lt;core-animated-pages&gt;</code><a target="_blank" href="bower_components/core-animated-pages/">[^]</a></p>
+        </div>
+        <div class="layout vertical start-justified">
+          <h2>Non-visual</h2>
+          <p><code>&lt;core-ajax&gt;</code><a target="_blank" href="bower_components/core-ajax/">[^]</a></p>
+          <p><code>&lt;core-localstorage&gt;</code><a target="_blank" href="../../io2014-codelabs/unbug/PolymerMobileCodelab/">[^]</a></p>
+          <p><code>&lt;core-range&gt;</code></p>
+          <p><code>&lt;core-media-query&gt;</code></p>
+          <p><code>&lt;core-iconset&gt;</code></p>
         </div>
       </div>
     </google-slide>
-    <google-slide layout vertical center center-justified>
-        <h1>Material design with Polymer</h1>
-        <p>Application layout</p>
-        <p>Icons</p>
-        <p>Material controls</p>
-        <p>Dialogs, snackbars, and toasts</p>
-        <p>Material effects<p>
-        <p>Transitions</p>
-        <p>Scrolling techniques</p>
-      </div>
+    <google-slide class="layout vertical center center-justified">
+      <h1>Material design with Polymer</h1>
+      <p>Application layout</p>
+      <p>Icons</p>
+      <p>Material controls</p>
+      <p>Dialogs, snackbars, and toasts</p>
+      <p>Material effects<p>
+      <p>Transitions</p>
+      <p>Scrolling techniques</p>
     </google-slide>
-    <google-slide layout vertical center center-justified>
-      <div layout vertical center-justified>
+    <google-slide class="layout vertical center center-justified">
+      <div class="layout vertical center-justified">
         <h1>Application layout<a target="_blank" href="http://www.polymer-project.org/docs/elements/layout-elements.html">[^]</a></h1>
         <p><code>&lt;core-header-panel&gt;</code><a target="_blank" href="bower_components/core-header-panel/">[^]</a></p>
-    <p><code>&lt;core-toolbar&gt;</code><a target="_blank" href="bower_components/core-toolbar/">[^]</a></p>
-    <p><code>&lt;core-drawer-panel&gt;</code><a target="_blank" href="bower_components/core-drawer-panel/">[^]</a></p>
-    <p><code>&lt;core-scaffold&gt;</code><a target="_blank" href="bower_components/core-scaffold/">[^]</a></p>
+        <p><code>&lt;core-toolbar&gt;</code><a target="_blank" href="bower_components/core-toolbar/">[^]</a></p>
+        <p><code>&lt;core-drawer-panel&gt;</code><a target="_blank" href="bower_components/core-drawer-panel/">[^]</a></p>
+        <p><code>&lt;core-scaffold&gt;</code><a target="_blank" href="bower_components/core-scaffold/">[^]</a></p>
       </div>
     </google-slide>
-    <google-slide layout vertical center center-justified>
-      <div layout vertical center-justified>
+    <google-slide class="layout vertical center center-justified">
+      <div class="layout vertical center-justified">
         <h1>Icons<a target="_blank" href="http://www.polymer-project.org/docs/elements/icons.html">[^]</a></h1>
         <p><code>&lt;core-icon&gt;</code><a target="_blank" href="bower_components/core-icon/">[^]</a></p>
       </div>
     </google-slide>
-    <google-slide layout vertical center center-justified>
+    <google-slide class="layout vertical center center-justified">
         <h1>Material controls</h1>
         <p><code>&lt;paper-button&gt;</code><a target="_blank" href="bower_components/paper-button/">[^]</a></p>
         <p><code>&lt;paper-checkbox&gt;</code><a target="_blank" href="bower_components/paper-checkbox/">[^]</a></p>
@@ -114,31 +112,30 @@
         <p><code>&lt;paper-slider&gt;</code><a target="_blank" href="bower_components/paper-slider/">[^]</a></p>
         <p><code>&lt;paper-progress&gt;</code><a target="_blank" href="bower_components/paper-progress/">[^]</a></p>
         <p><code>&lt;paper-input&gt;</code><a target="_blank" href="bower_components/paper-input/">[^]</a></p>
-      </div>
     </google-slide>
-    <google-slide layout vertical center center-justified>
+    <google-slide class="layout vertical center center-justified">
         <h1>Dialogs, snackbars, and toasts</h1>
         <p><code>&lt;paper-dialog&gt;</code><a target="_blank" href="bower_components/paper-dialog/">[^]</a></p>
         <p><code>&lt;paper-toast&gt;</code><a target="_blank" href="bower_components/paper-toast/">[^]</a></p>
     </google-slide>
-    <google-slide layout vertical center center-justified>
+    <google-slide class="layout vertical center center-justified">
         <h1>Material effects</h1>
         <p><code>&lt;paper-ripple&gt;</code><a target="_blank" href="bower_components/paper-ripple/">[^]</a></p>
         <p><code>&lt;paper-shadow&gt;</code><a target="_blank" href="bower_components/paper-shadow/">[^]</a></p>
     </google-slide>
-    <google-slide layout vertical center center-justified>
+    <google-slide class="layout vertical center center-justified">
         <h1>Transitions</h1>
         <p><code>&lt;core-animated-pages&gt;</code><a target="_blank" href="bower_components/core-animated-pages/">[^]</a></p>
     </google-slide>
-    <google-slide layout vertical center center-justified>
+    <google-slide class="layout vertical center center-justified">
         <h1>Scrolling techniques</h1>
         <p><code>&lt;core-scroll-header-panel&gt;</code><a target="_blank" href="bower_components/core-scroll-header-panel/">[^]</a></p>
     </google-slide>
-    <google-slide layout vertical center center-justified>
+    <google-slide class="layout vertical center center-justified">
         <h1>Paper Elements<a target="_blank" href="bower_components/paper-elements/demo.html">[^]</a></h1>
         <p><a target="_blank" href="http://www.polymer-project.org/docs/elements/paper-elements.html">www.polymer-project.org/docs/elements/paper-elements.html</a></p>
     </google-slide>
-    <google-slide layout vertical center center-justified>
+    <google-slide class="layout vertical center center-justified">
         <h1>Topeka App<a target="_blank" href="../Topeka/topeka/">[^]</a></h1>
         <p><a target="_blank" href="http://www.polymer-project.org/docs/elements/paper-elements.html">www.polymer-project.org/docs/elements/paper-elements.html</a></p>
         <h1>Material Playground<a target="_blank" href="../MaterialPlayground/material-playground/">[^]</a></h1>
@@ -148,7 +145,7 @@
         <h1>Polymer Chrome App</h1>
         <p><a target="_blank" href="https://github.com/PolymerLabs/polymerchromeapp">https://github.com/PolymerLabs/polymerchromeapp</a></p>
     </google-slide>
-    <google-slide layout vertical center center-justified>
+    <google-slide class="layout vertical center center-justified">
         <h1>Google APIs</h1>
         <p><code>&lt;google-signin&gt;</code><a target="_blank" href="http://127.0.0.1:51792/PolymerDriveCodelab/index.html">[^]</a></p>
         <p><code>&lt;google-map&gt;</code><a target="_blank" href="http://127.0.0.1:51792/PolymerMapsCodelab/index.html">[^]</a></p>
@@ -158,27 +155,25 @@
         <p><code>&lt;google-calendar&gt;</code></p>
         <p><a href="https://github.com/GoogleWebComponents" target="_blank">https://github.com/GoogleWebComponents</a></p>
     </google-slide>
-    <google-slide layout vertical center center-justified>
+    <google-slide class="layout vertical center center-justified">
         <h1>Custom Elements</h1>
         <p><a href="http://customelements.io/" target="_blank">http://customelements.io/</a></p>
     </google-slide>
-    <google-slide layout vertical center center-justified>
+    <google-slide class="layout vertical center center-justified">
         <h1>Polymer Designer<a target="_blank" href="../Designer/designer/">[^]</a></h1>
         <p><a target="_blank" href="http://www.polymer-project.org/tools/designer/">www.polymer-project.org/tools/designer/</a></p>
         <h1>Mobile UI Elements</h1>
         <p><a href="https://github.com/ForceDotComLabs/mobile-ui-elements" target="_blank">https://github.com/ForceDotComLabs/mobile-ui-elements</a></p>
     </google-slide>
-    <google-slide layout vertical center center-justified>
+    <google-slide class="layout vertical center center-justified">
         <h1>Chrome Dev Editor</h1>
         <p><a target="_blank" href="https://chrome.google.com/webstore/detail/chrome-dev-editor-develop/pnoffddplpippgcfjdhbmhkofpnaalpg?hl=en">https://chrome.google.com/webstore/detail/chrome-dev-editor-develop/pnoffddplpippgcfjdhbmhkofpnaalpg?hl=en</a></p>
-      </div>
     </google-slide>
-    <google-slide layout vertical center center-justified>
+    <google-slide class="layout vertical center center-justified">
         <video controls autobuffer onclick="this.play();" height="500"><source src="resources/videos/Welcome-to-the-World-of-Tomorrow.mp4" type="video/mp4"></video>
         <p><a target="_blank" href="http://www.polymer-project.org/">http://www.polymer-project.org</a></p>
         <p><a target="_blank" href="https://github.com/Polymer">https://github.com/Polymer</a></p>
     </google-slide>
   </google-slides>
-
 </body>
 </html>
