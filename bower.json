@@ -1,8 +1,9 @@
 {
   "name": "google-slides",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "authors": [
-    "Addy Osmani <addyosmani@gmail.com>"
+    "Addy Osmani",
+    "Willem Burgers"
   ],
   "description": "A slide deck featuring offline-support, powered by Service Worker.",
   "keywords": [
@@ -12,7 +13,7 @@
     "slides"
   ],
   "main": "google-slides.html",
-  "license": "MIT",
+  "license": "Apache-2",
   "homepage": "https://github.com/addyosmani/google-slides/",
   "ignore": [
     "/.*",
