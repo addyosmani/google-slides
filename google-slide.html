@@ -1,4 +1,5 @@
 <link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-flex-layout/iron-flex-layout.html">
 
 <!--
 A single slide entry in a `google-slides` deck. You can either define
@@ -12,12 +13,11 @@ a `google-slide` or use normal elements (e.g `<section>`).
 
 @element google-slide
 @blurb A single slide entry in a `google-slides` deck.
-@status alpha
 
 -->
-<polymer-element name="google-slide" noscript>
-	<template>
-	<style>
+
+<dom-module id="google-slide">
+  <style>
 		:host {
 		    display: block;
 		}
@@ -42,12 +42,16 @@ a `google-slide` or use normal elements (e.g `<section>`).
 
 		:host section.nav > div:first-child {
 		    padding-right: 0;
-		}			
+		}
 	</style>
+  <template>
 	    <section>
-	      <div layout vertical center-justified>
+	      <div class="layout vertical center-justified">
 	      	<content></content>
 	      </div>
 	    </section>
 	</template>
-</polymer-element>
+  <script>
+    Polymer({ is: 'google-slide' });
+  </script>
+</dom-module>

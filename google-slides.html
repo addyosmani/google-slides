@@ -2,120 +2,118 @@
 <link rel="import" href="google-slide.html">
 <link rel="import" href="google-slide-author.html">
 
-<!-- Core -->
-<link rel="import" href="../core-icons/core-icons.html">
-<link rel="import" href="../core-a11y-keys/core-a11y-keys.html">
-<link rel="import" href="../core-animated-pages/core-animated-pages.html">
-<link rel="import" href="../core-animated-pages/transitions/cross-fade.html" >
-<link rel="import" href="../core-animated-pages/transitions/slide-from-right.html" >
-<link rel="import" href="../core-animated-pages/transitions/slide-from-bottom.html">
+<!-- Iron -->
+<link rel="import" href="../iron-icons/iron-icons.html">
+<link rel="import" href="../iron-a11y-keys/iron-a11y-keys.html">
+<link rel="import" href="../iron-flex-layout/iron-flex-layout.html">
 
+<!-- Neon -->
+<link rel="import" href="../neon-animation/neon-animated-pages.html">
+<link rel="import" href="../neon-animation/neon-animations.html">
 
-<!-- ServiceWorker elements -->
-<link rel="import" href="../service-worker-cache/service-worker-cache.html">
-<link rel="import" href="../service-worker-cache/service-worker-cacheable-resource.html">
+<!-- Platinum -->
+<link rel="import" href="../platinum-sw/platinum-sw-register.html">
+<link rel="import" href="../platinum-sw/platinum-sw-cache.html">
 
 <!-- Paper -->
 <link rel="import" href="../paper-fab/paper-fab.html">
-<link rel="import" href="../paper-shadow/paper-shadow.html">
+<link rel="import" href="../paper-material/paper-material.html">
 
-<link rel="stylesheet" href="animate.css"/>
+<link rel="stylesheet" href="animate.css">
 
 <!--
 A slide deck featuring offline-support, powered by Service Worker.
 
 ##### Example
 
-    <google-slides transition="slide-from-bottom">
+    <google-slides>
       <google-slide>...</google-slide>
       <google-slide>...</google-slide>
     </google-slides>
 
 @element google-slides
+@demo demo/demo.html
 @blurb A slide deck featuring offline-support, powered by Service Worker.
-@status alpha
 @homepage http://addyosmani.github.io/google-slides
 
 Adapted from UnBug's slide-page element.
 -->
 
-<polymer-element name="google-slides" attributes="transition">
-	<template>
-		<link rel="stylesheet" href="google-slides.css"/>
-
-		<template>
-			<service-worker-cache></service-worker-cache>
-		</template>
-		<core-animated-pages id="pages" transitions="{{transition}}" selected="{{pageIndex}}" tabindex="0">
+<dom-module id="google-slides">
+  <link rel="import" type="css" href="google-slides.css">
+  <template>
+    <platinum-sw-register auto-register>
+      <platinum-sw-cache defaultCacheStrategy="fastest"></platinum-sw-cache>
+    </platinum-sw-register>
+		<neon-animated-pages id="pages" selected="{{pageIndex}}" entry-animation="[[entryAnimation]]" exit-animation="[[exitAnimation]]">
 			<content></content>
-		</core-animated-pages>
-		<core-a11y-keys id="a11y" keys="* left right pageup pagedown" target="{{parentElement}}" on-keys-pressed="{{keypressHandler}}"></core-a11y-keys>
-		<section class="nav" layout horizontal end-justified>
-			<div layout horizontal>
-				<paper-fab start-justified icon="icons:arrow-back" id="preBtn" on-click="{{prePage}}">
-					<paper-shadow z="5"></paper-shadow>
+		</neon-animated-pages>
+		<iron-a11y-keys id="a11y" keys="* left right pageup pagedown" target="{{parentElement}}" on-keys-pressed="keypressHandler"></iron-a11y-keys>
+		<section class="nav layout horizontal end-justified">
+			<div class="layout horizontal">
+				<paper-fab hidden$="[[_computePreHidden(pageIndex)]]" class="start-justified" icon="icons:arrow-back" id="preBtn" on-click="prePage">
+					<paper-material elevation="5"></paper-material>
 				</paper-fab>
 			</div>
-			<div layout horizontal>
-				<paper-fab icon="icons:arrow-forward" id="nextBtn" on-click="{{nextPage}}">
-					<paper-shadow z="5"></paper-shadow>
+			<div class="layout horizontal">
+				<paper-fab hidden$="[[_computeNextHidden(pageIndex)]]" icon="icons:arrow-forward" id="nextBtn" on-click="nextPage">
+					<paper-material elevation="5"></paper-material>
 				</paper-fab>
 			</div>
 		</section>
 	</template>
-
-	<script>
-		Polymer('google-slides', {
-			/* slide-from-right, slide-from-bottom*/
-			transition: 'slide-from-right',
-			pageIndex: 0,
-			pageMax: 0,
-
-			ready: function () {
-				this.tabIndex = 0;
-				this.pageMax = this.children.length - 1;
-				this.$.pages.focus();
-				this.pageIndex = parseInt(window.location.hash.replace('#', '') || 0, 10);
-				this.toggleBtns();
-			},
-			keypressHandler: function (e, detail, sender) {
-				switch (detail.key) {
-					case 'left':
-						this.prePage();
-						break;
-					case 'right':
-						this.nextPage();
-						break;
-				}
-			},
-			prePage: function () {
-				this.pageIndex -= 1;
-				if (this.pageIndex <= 0) {
-					this.pageIndex = 0;
-				}
-				window.location.hash = this.pageIndex;
-				this.toggleBtns();
-			},
-			nextPage: function () {
-				this.pageIndex += 1;
-				if (this.pageIndex >= this.pageMax) {
-					this.pageIndex = this.pageMax;
-				}
-				window.location.hash = this.pageIndex;
-				this.toggleBtns();
-			},
-			toggleBtns: function () {
-				if (this.pageIndex >= this.pageMax) {
-					this.$.nextBtn.hidden = true;
-				} else {
-					this.$.nextBtn.removeAttribute('hidden');
-				}
-				if (this.pageIndex <= 0) {
-					this.$.preBtn.hidden = true;
-				} else {
-					this.$.preBtn.removeAttribute('hidden');
-				}
-			}
-		});
-	</script>
-</polymer-element>
+  <script>
+    Polymer({
+      is: 'google-slides',
+      properties: {
+        pageIndex: {
+          type: Number,
+          value: 0
+        },
+        pageMax: {
+          type: Number,
+          value: 0
+        }
+      },
+      ready: function () {
+        this.pageMax = this.$.pages.children.length - 1;
+        this.$.pages.focus();
+        this.pageIndex = parseInt(window.location.hash.replace('#', '') || 0, 10);
+      },
+      keypressHandler: function (e, detail, sender) {
+        switch (detail.key) {
+        case 'left':
+          this.prePage();
+          break;
+        case 'right':
+          this.nextPage();
+          break;
+        }
+      },
+      prePage: function () {
+        this.entryAnimation = 'slide-from-left-animation';
+        this.exitAnimation = 'slide-right-animation';
+        --this.pageIndex;
+        if (this.pageIndex <= 0) {
+          this.pageIndex = 0;
+        }
+        window.location.hash = this.pageIndex;
+      },
+      nextPage: function () {
+        this.entryAnimation = 'slide-from-right-animation';
+        this.exitAnimation = 'slide-left-animation';
+        ++this.pageIndex;
+        if (this.pageIndex >= this.pageMax) {
+          this.pageIndex = this.pageMax;
+        }
+        window.location.hash = this.pageIndex;
+      },
+      _computePreHidden: function(pageIndex) {
+        return pageIndex <= 0;
+      },
+      _computeNextHidden: function(pageIndex) {
+        return pageIndex >= this.pageMax;
+      }
+    });
+  </script>
+</dom-module>
