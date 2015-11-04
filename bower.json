@@ -21,10 +21,10 @@
   ],
   "dependencies": {
     "polymer": "Polymer/polymer#^1.0.0",
-    "iron-pages": "PolymerElements/iron-pages#~1.0.0",
-    "paper-fab": "PolymerElements/paper-fab#~1.0.0",
-    "iron-a11y-keys": "PolymerElements/iron-a11y-keys#~1.0.0",
-    "neon-animation": "PolymerElements/neon-animation#~1.0.0",
+    "iron-pages": "PolymerElements/iron-pages#^1.0.0",
+    "paper-fab": "PolymerElements/paper-fab#^1.0.0",
+    "iron-a11y-keys": "PolymerElements/iron-a11y-keys#^1.0.0",
+    "neon-animation": "PolymerElements/neon-animation#^1.0.0",
     "platinum-sw": "PolymerElements/platinum-sw#^1.2.0"
   },
   "devDependencies": {
