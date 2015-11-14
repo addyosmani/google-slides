@@ -18,35 +18,28 @@ a `google-slide` or use normal elements (e.g `<section>`).
 
 <dom-module id="google-slide">
   <style>
-		:host {
-		    display: block;
-		}
-		:host section {
-		    width: 100%;
-		}
-
-		:host section > div {
-		    height: 100%;
-		    padding: 0 30px;
-		}
-
-		:host section.nav {
-		    position: absolute;
-		    bottom: 30px;
-		    left: 0;
-		}
-
-		:host section.nav > div {
-		    padding: 0 30px;
-		}
-
-		:host section.nav > div:first-child {
-		    padding-right: 0;
-		}
-	</style>
+    :host {
+      @apply(--layout-vertical);
+      @apply(--layout-center-justified);
+    }
+    #content-wrapper {
+      padding: 5px;
+    }
+    #content-wrapper > ::content p, ::content h1, ::content h2, ::content h3, ::content h4, ::content h5 {
+        padding: 5px;
+        margin: 0;
+        word-break: break-all;
+    }
+    #content-wrapper ::content h1 {
+        padding: 10px;
+    }
+    #content-wrapper > ::content a:hover {
+      text-decoration: underline;
+    }
+  </style>
   <template>
 	    <section>
-	      <div class="layout vertical center-justified">
+	      <div id="content-wrapper" class="layout vertical center-justified">
 	      	<content></content>
 	      </div>
 	    </section>

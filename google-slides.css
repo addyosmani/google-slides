@@ -8,66 +8,34 @@
  * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
  */
 
-:host {
-    display: block;
-}
+ neon-animated-pages {
+     position: absolute;
+     top: 0px;
+     right: 0;
+     bottom: 0;
+     left: 0;
+     font-size: 32px;
+     overflow: hidden;
+     background-color: white;
+     color: #333333;
+ }
 
-neon-animated-pages {
-    position: absolute;
-    top: 0px;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    font-size: 32px;
-    overflow: hidden;
-    background-color: white;
-    color: #333333;
-}
+ .nav {
+   @apply(--layout-horizontal);
+   @apply(--layout-end-justified);
 
-::content p, ::content h1, ::content h2, ::content h3, ::content h4, ::content h5 {
-    padding: 5px;
-    margin: 0;
-    word-break: break-all;
-}
+   position: absolute;
+   bottom: 30px;
+   left: 0;
+   width: 100%;
+ }
 
-::content h1 {
-    padding: 10px;
-}
-
-::content section {
-    width: 100%;
-}
-
-::content section > div {
-    height: 100%;
-    padding: 0 30px;
-}
-
-::content section.nav {
-    position: absolute;
-    bottom: 30px;
-    left: 0;
-}
-
-::content section.nav > div {
-    padding: 0 30px;
-}
-
-::content section.nav > div:first-child {
-    padding-right: 0;
-}
+ .nav > div {
+     padding: 0 15px;
+ }
 
 #preBtn {
     background: #999;
-}
-
-::content code {
-    color: #9f499b;
-    padding: 0 5px;
-}
-
-::content div {
-    padding: 5px;
 }
 
 ::content a, ::content a:active, ::content a:visited, ::content a:link {
@@ -76,20 +44,7 @@ neon-animated-pages {
     text-decoration: none;
 }
 
-::content a:hover {
-    text-decoration: underline;
-}
 
-.nav {
-    position: absolute;
-    bottom: 30px;
-    left: 0;
-    width: 100%;
-}
-
-.nav > div {
-    padding: 0 15px;
-}
 
 ::content p {
     -webkit-animation-name: fadeInUp;
@@ -122,103 +77,6 @@ neon-animated-pages {
     background: -moz-linear-gradient(#ffffff 90%, #e6e6e6);
     background: -o-linear-gradient(#ffffff 90%, #e6e6e6);
     background: linear-gradient(#ffffff 90%, #e6e6e6)
-}
-
-@-webkit-keyframes rotateRight {
-    from {
-        -webkit-transform: rotate(0)
-    }
-
-    to {
-        -webkit-transform: rotate(360deg)
-    }
-}
-
-@-webkit-keyframes jitter {
-    0% {
-        -webkit-transform: rotate(0deg)
-    }
-
-    2% {
-        -webkit-transform: rotate(-7deg) translateX(2px) scale(1.1)
-    }
-
-    4% {
-        -webkit-transform: rotate(0deg)
-    }
-
-    6% {
-        -webkit-transform: rotate(7deg) translateX(-2px)
-    }
-
-    8% {
-        -webkit-transform: rotate(0deg)
-    }
-
-    10% {
-        -webkit-transform: rotate(-7deg) translateX(2px) scale(1.1)
-    }
-
-    12% {
-        -webkit-transform: rotate(0deg)
-    }
-
-    14% {
-        -webkit-transform: rotate(7deg) translateX(-2px)
-    }
-
-    16% {
-        -webkit-transform: rotate(0deg)
-    }
-}
-
-.spin {
-    -webkit-animation-name: rotateRight;
-    -moz-animation-name: rotateRight;
-    -ms-animation-name: rotateRight;
-    -o-animation-name: rotateRight;
-    animation-name: rotateRight;
-    -webkit-animation-duration: 15s;
-    -webkit-animation-timing-function: linear;
-    -webkit-transform-origin: 50% 50%;
-    -webkit-animation-iteration-count: infinite
-}
-
-.jitter {
-    -webkit-animation-name: jitter;
-    -webkit-animation-duration: 2s;
-    -webkit-animation-timing-function: ease-in-out;
-    -webkit-transform-origin: 50% 50%;
-    -webkit-animation-iteration-count: infinite
-}
-
-.pop {
-    -webkit-transition: all 400ms cubic-bezier(0.17, 0.67, 0, 1.33);
-    -moz-transition: all 400ms cubic-bezier(0.17, 0.67, 0, 1.33);
-    -o-transition: all 400ms cubic-bezier(0.17, 0.67, 0, 1.33);
-    transition: all 400ms cubic-bezier(0.17, 0.67, 0, 1.33)
-}
-
-.pop.to-build, .pop.auto-fadein {
-    -webkit-transform: scale(0.5);
-    -moz-transform: scale(0.5);
-    -ms-transform: scale(0.5);
-    -o-transform: scale(0.5);
-    transform: scale(0.5)
-}
-
-.fill .faded, body.black .faded, body.googleblue .faded, body.googlered .faded, body.googleyellow .faded, body.googlegreen .faded, body.googlegray .faded {
-    color: rgba(255, 255, 255, 0.6)
-}
-
-.fill h2, body.black h2, body.googleblue h2, body.googlered h2, body.googleyellow h2, body.googlegreen h2, body.googlegray h2 {
-    color: #fff;
-    font-weight: 400
-}
-
-.fill h2 em, body.black h2 em, body.googleblue h2 em, body.googlered h2 em, body.googleyellow h2 em, body.googlegreen h2 em, body.googlegray h2 em {
-    font-style: normal;
-    color: #fff
 }
 
 ul > li::before {
@@ -339,76 +197,3 @@ body.black {
 pre, code {
     font-family: 'Inconsolata'
 }
-
-/*
-sections > section {
-    border-radius: 0;
-    font-family: 'Roboto2', sans-serif;
-    padding: 0 40px
-}
-
-sections > section.segue {
-    padding: 0 80px;
-    color: #fff
-}
-
-sections > section.segue h2 {
-    font-size: 65px;
-    line-height: 1.5;
-    color: inherit
-}
-
-sections > section.segue h3 {
-    font-size: 50px;
-    line-height: 1.5;
-    color: inherit
-}
-
-sections > section.segue hgroup {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    height: 100%
-}
-
-sections > section:not(.nobackground)::before, sections > section:not(.nobackground)::after {
-    bottom: 0;
-    left: initial
-}
-
-sections > section:not(.nobackground)::after {
-    right: 40px;
-    background-size: contain;
-    height: 60px;
-    width: 75px;
-    padding-right: 50px;
-    display: flex;
-    align-items: flex-end;
-    opacity: 0.15;
-    content: attr(data-section-num) "/" attr(data-total-sections)
-}
-
-sections > section > article:not(:only-child).flexbox {
-    margin: 0;
-    height: calc(100% - 70px) !important
-}
-
-sections > section > article:not(:only-child) h3 {
-    font-size: 40px
-}
-
-section#who article h2, section#who article h3 {
-    line-height: initial
-}
-
-section#who article h3:first-of-type {
-    color: inherit
-}
-
-section#who img {
-    border-radius: 50%;
-    border: 7px solid #fff;
-    box-shadow: 0 0 7px #797979
-}
-*/
