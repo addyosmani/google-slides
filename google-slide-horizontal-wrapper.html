@@ -1,0 +1,44 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-flex-layout/iron-flex-layout.html">
+
+<!--
+A wrapper for hoizontal layout in slides.
+Use this element to distribute multiple slides horizontally.
+
+##### Example
+
+    <google-slide-horizontal-wrapper>
+      <google-slide>
+        Slide content
+      </google-slide>
+      <google-slide>
+        Slide2 content
+      </google-slide>
+    </google-slide-horizontal-wrapper>
+
+@element google-slide-horizontal-wrapper
+@blurb A wrapper for horizontal layout in slides.
+
+-->
+
+<dom-module id="google-slide-horizontal-wrapper">
+  <style>
+    :host {
+      @apply(--layout-horizontal);
+      @apply(--layout-left-justified);
+    }
+  </style>
+  <template>
+    <content></content>
+  </template>
+  <script>
+    Polymer({
+      is: 'google-slide-horizontal-wrapper',
+      playAnimation: function(animation){
+        this.queryAllEffectiveChildren("google-slide").map(function(google_slide_object){
+          google_slide_object.playAnimation(animation);
+        })
+      }
+    });
+  </script>
+</dom-module>

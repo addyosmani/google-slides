@@ -1,5 +1,7 @@
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../neon-animation/neon-animation-runner-behavior.html">
+<link rel="import" href="../neon-animation/neon-animations.html">
 
 <!--
 A single slide entry in a `google-slides` deck. You can either define
@@ -22,29 +24,87 @@ a `google-slide` or use normal elements (e.g `<section>`).
       @apply(--layout-vertical);
       @apply(--layout-center-justified);
     }
-    #content-wrapper {
+    #contentWrapper {
       padding: 5px;
     }
-    #content-wrapper > ::content p, ::content h1, ::content h2, ::content h3, ::content h4, ::content h5 {
+    #contentWrapper > ::content p, ::content h1, ::content h2, ::content h3, ::content h4, ::content h5 {
         padding: 5px;
         margin: 0;
         word-break: break-all;
     }
-    #content-wrapper ::content h1 {
+    #contentWrapper ::content h1 {
         padding: 10px;
     }
-    #content-wrapper > ::content a:hover {
+    #contentWrapper > ::content a:hover {
       text-decoration: underline;
     }
   </style>
   <template>
-	    <section>
-	      <div id="content-wrapper" class="layout vertical center-justified">
-	      	<content></content>
-	      </div>
-	    </section>
+      <div id="contentWrapper">
+	<content id="content"></content>
+      </div>
 	</template>
   <script>
-    Polymer({ is: 'google-slide' });
+    Polymer({
+      is: 'google-slide',
+
+      behaviors: [
+        Polymer.NeonAnimationRunnerBehavior
+      ],
+
+      properties: {
+        animationConfig: {
+          type: Object,
+          value: function() {
+            return {
+              'entry': [{
+                name: 'cascaded-animation',
+                animation: 'fade-in-animation',
+                nodedelay: 0,
+                timing: {
+                  delay: 50,
+                  duration: 1000
+                }
+              },
+              {
+                name: 'cascaded-animation',
+                animation: 'slide-down-animation',
+                nodedelay: 0,
+                timing: {
+                  delay: 50,
+                  duration: 1000
+                }
+              },
+              {
+                name: 'cascaded-animation',
+                animation: 'transform-animation',
+                transformFrom: 'translateY(100%)',
+                transformTo: 'none',
+                timing: {
+                  delay: 50,
+                  duration: 1000
+                }
+              }]
+            }
+          }
+        },
+      },
+
+      attached: function() {
+        this.async(function() {
+          var headings = this.queryAllEffectiveChildren("h1");
+          var headings2 = this.queryAllEffectiveChildren("h2");
+          var paragraphs = this.queryAllEffectiveChildren("p");
+          var preformatted = this.queryAllEffectiveChildren("pre");
+
+          var allheadings = headings.concat(headings2);
+          var allcontent  = paragraphs.concat(preformatted);
+
+          this.animationConfig['entry'][0].nodes = allheadings.concat(allcontent);
+          this.animationConfig['entry'][1].nodes = allheadings;
+          this.animationConfig['entry'][2].nodes = allcontent;
+        });
+      }
+    });
   </script>
 </dom-module>
