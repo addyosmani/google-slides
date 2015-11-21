@@ -13,16 +13,14 @@
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <title>google-slides Demo</title>
 
+  <link rel="stylesheet" href="demo.css">
   <script src="../../webcomponentsjs/webcomponents-lite.min.js"></script>
   <link rel="import" href="../../google-slides/google-slides.html">
   <link rel="import" href="../../font-roboto/roboto.html">
-  <link rel="stylesheet" href="demo.css">
-
 </head>
 <body unresolved>
-
   <google-slides>
-    <div is="google-slide" class="googlegreen layout vertical center center-justified">
+    <google-slide class="googlegreen layout vertical center center-justified">
         <h1>&lt;google-slides&gt;</h1>
         <p>
             <google-slide-author
@@ -31,7 +29,7 @@
                 plus="+WillemBurgers">
             </google-slide-author>
         </p>
-    </div>
+    </google-slide>
     <google-slide class="googlered">
       	<h1>Polymer</h1>
       	<p>@Polymer</p>
@@ -50,13 +48,12 @@
         <p>Polymer Designer</p>
         <p>Chrome Dev Editor</p>
     </google-slide>
-    <google-slide class="googleblue">
+    <google-slide class="googleblue center layout center-justified">
         <video controls autobuffer onclick="this.play();" height="500"><source src="resources/videos/Welcome-to-the-World-of-Tomorrow.mp4" type="video/mp4"></video>
     </google-slide>
     <google-slide>
         <h1>Iron Elements</h1>
         <p><a target="_blank" href="https://elements.polymer-project.org/browse?package=iron-elements">https://elements.polymer-project.org/browse?package=iron-elements</a></p>
-    </google-slide>
     </google-slide>
     <google-slide>
       <h1>Material design with Polymer</h1>
@@ -143,11 +140,32 @@
         <h1>Chrome Dev Editor</h1>
         <p><a target="_blank" href="https://chrome.google.com/webstore/detail/chrome-dev-editor-develop/pnoffddplpippgcfjdhbmhkofpnaalpg?hl=en">https://chrome.google.com/webstore/detail/chrome-dev-editor-develop/pnoffddplpippgcfjdhbmhkofpnaalpg?hl=en</a></p>
     </google-slide>
-    <google-slide>
+    <google-slide class="center layout center-justified">
         <video controls autobuffer onclick="this.play();" height="500"><source src="resources/videos/Welcome-to-the-World-of-Tomorrow.mp4" type="video/mp4"></video>
         <p><a target="_blank" href="http://www.polymer-project.org/">http://www.polymer-project.org</a></p>
         <p><a target="_blank" href="https://github.com/Polymer">https://github.com/Polymer</a></p>
     </google-slide>
+    <google-slide-horizontal-wrapper>
+      <google-slide>
+        <h1>Multiple slides example</h1>
+        <p><code>&lt;google-slides&gt;</code></p>
+        <p><code>&lt;google-slide-horizontal-wrapper&gt;</code></p>
+        <p><code>&lt;google-slide&gt;</code></p>
+        <p><code>&lt;h1&gt;Multiple slides example&lt;/h1&gt;</code></p>
+        <p><code>&lt;p&gt;Enter recursion here&lt;/p&gt;</code></p>
+        <p><code>&lt;/google-slide&gt;</code></p>
+        <p><code>&lt;google-slide&gt;</code></p>
+        <p><code>&lt;h1&gt;Such meta! wow&lt;/h1&gt;</code></p>
+        <p><code>&lt;p&gt;Example with multiple slides on a page&lt;/p&gt;</code></p>
+        <p><code>&lt;/google-slide&gt;</code></p>
+        <p><code>&lt;/google-slide-horizontal-wrapper&gt;</code></p>
+        <p><code>&lt;/google-slides&gt;</code></p>
+      </google-slide>
+      <google-slide>
+        <h1>Such meta! wow</h1>
+        <p>Example with multiple slides on a page</p>
+      </google-slide>
+    </google-slide-horizontal-wrapper>
   </google-slides>
 </body>
 </html>
