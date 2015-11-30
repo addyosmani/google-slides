@@ -1,0 +1,42 @@
+{
+  "name": "google-slides",
+  "authors": [
+    "Addy Osmani",
+    "Willem Burgers"
+  ],
+  "description": "A slide deck featuring offline-support, powered by Service Worker.",
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer",
+    "slides"
+  ],
+  "main": "google-slides.html",
+  "license": "Apache-2",
+  "homepage": "https://github.com/addyosmani/google-slides/",
+  "ignore": [
+    "/.*",
+    "/tests/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.0.0",
+    "iron-pages": "PolymerElements/iron-pages#^1.0.0",
+    "paper-fab": "PolymerElements/paper-fab#^1.0.0",
+    "iron-a11y-keys": "PolymerElements/iron-a11y-keys#^1.0.0",
+    "neon-animation": "PolymerElements/neon-animation#^1.0.0",
+    "platinum-sw": "PolymerElements/platinum-sw#^1.2.0"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0"
+  },
+  "_release": "d05d620231",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "d05d620231818d7f33175b8b7a1f6522ee8c7436"
+  },
+  "_source": "git://github.com/addyosmani/google-slides.git",
+  "_target": "master",
+  "_originalSource": "addyosmani/google-slides",
+  "_direct": true
+}

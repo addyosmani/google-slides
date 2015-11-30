@@ -1,0 +1,116 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="google-slide.html">
+<link rel="import" href="google-slide-author.html">
+<link rel="import" href="google-slide-horizontal-wrapper.html">
+
+<!-- Iron -->
+<link rel="import" href="../iron-icons/iron-icons.html">
+<link rel="import" href="../iron-a11y-keys/iron-a11y-keys.html">
+<link rel="import" href="../iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../iron-flex-layout/classes/iron-flex-layout.html">
+
+<!-- Neon -->
+<link rel="import" href="../neon-animation/neon-animated-pages.html">
+<link rel="import" href="../neon-animation/neon-animations.html">
+
+<!-- Platinum -->
+<link rel="import" href="../platinum-sw/platinum-sw-register.html">
+<link rel="import" href="../platinum-sw/platinum-sw-cache.html">
+
+<!-- Paper -->
+<link rel="import" href="../paper-fab/paper-fab.html">
+<link rel="import" href="../paper-material/paper-material.html">
+
+<!--
+A slide deck featuring offline-support, powered by Service Worker.
+
+##### Example
+
+    <google-slides>
+      <google-slide>...</google-slide>
+      <google-slide-horizontal-wrapper>
+        <google-slide>...</google-slide>
+        <google-slide>...</google-slide>
+      </google-slide-horizontal-wrapper>
+    </google-slides>
+
+@element google-slides
+@demo demo/demo.html
+@blurb A slide deck featuring offline-support, powered by Service Worker.
+@homepage http://addyosmani.github.io/google-slides
+
+Adapted from UnBug's slide-page element.
+-->
+
+<dom-module id="google-slides">
+  <link rel="import" type="css" href="google-slides.css">
+  <template>
+    <platinum-sw-register skip-waiting clients-claim auto-register>
+      <platinum-sw-cache defaultCacheStrategy="fastest"></platinum-sw-cache>
+    </platinum-sw-register>
+		<neon-animated-pages id="pages" selected="{{pageIndex}}" entry-animation="[[entryAnimation]]" exit-animation="[[exitAnimation]]">
+			<content></content>
+		</neon-animated-pages>
+		<iron-a11y-keys id="a11y" keys="* left right pageup pagedown" target="{{parentElement}}" on-keys-pressed="keypressHandler"></iron-a11y-keys>
+		<section class="nav">
+			<div class="layout horizontal">
+				<paper-fab hidden$="[[_computePreHidden(pageIndex)]]" class="start-justified" icon="icons:arrow-back" id="preBtn" on-click="prePage">
+					<paper-material elevation="5"></paper-material>
+				</paper-fab>
+			</div>
+			<div class="layout horizontal">
+				<paper-fab hidden$="[[_computeNextHidden(pageIndex)]]" icon="icons:arrow-forward" id="nextBtn" on-click="nextPage">
+					<paper-material elevation="5"></paper-material>
+				</paper-fab>
+			</div>
+		</section>
+	</template>
+  <script>
+    Polymer({
+      is: 'google-slides',
+      properties: {
+        pageIndex: {
+          type: Number,
+          value: 0
+        },
+        pageMax: {
+          type: Number,
+          value: 0
+        }
+      },
+      ready: function () {
+        this.pageMax = this.$.pages.children.length - 1;
+        this.$.pages.focus();
+        this.pageIndex = parseInt(window.location.hash.replace('#', '') || 0, 10);
+      },
+      keypressHandler: function (e, detail, sender) {
+        switch (detail.key) {
+        case 'left':
+          this.prePage();
+          break;
+        case 'right':
+          this.nextPage();
+          break;
+        }
+      },
+      prePage: function () {
+        this.entryAnimation = 'slide-from-left-animation';
+        this.exitAnimation = 'slide-right-animation';
+        this.$.pages.selectPrevious();
+        this.$.pages.selectedItem.playAnimation('entry');
+      },
+      nextPage: function () {
+        this.entryAnimation = 'slide-from-right-animation';
+        this.exitAnimation = 'slide-left-animation';
+        this.$.pages.selectNext();
+        this.$.pages.selectedItem.playAnimation('entry');
+      },
+      _computePreHidden: function(pageIndex) {
+        return pageIndex <= 0;
+      },
+      _computeNextHidden: function(pageIndex) {
+        return pageIndex >= this.pageMax;
+      }
+    });
+  </script>
+</dom-module>

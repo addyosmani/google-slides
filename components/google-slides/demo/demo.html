@@ -1,0 +1,171 @@
+<!--
+    @license
+    Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+    This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+    The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+    The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+    Code distributed by Google as part of the polymer project is also
+    subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <title>google-slides Demo</title>
+
+  <link rel="stylesheet" href="demo.css">
+  <script src="../../webcomponentsjs/webcomponents-lite.min.js"></script>
+  <link rel="import" href="../../google-slides/google-slides.html">
+  <link rel="import" href="../../font-roboto/roboto.html">
+</head>
+<body unresolved>
+  <google-slides>
+    <google-slide class="googlegreen layout vertical center center-justified">
+        <h1>&lt;google-slides&gt;</h1>
+        <p>
+            <google-slide-author
+                avatar="resources/images/wburgers.jpg"
+                twitter="@willemburgers"
+                plus="+WillemBurgers">
+            </google-slide-author>
+        </p>
+    </google-slide>
+    <google-slide class="googlered">
+      	<h1>Polymer</h1>
+      	<p>@Polymer</p>
+      	<p><a href="http://polymer-project.org">Polymer Project Docs</a></p>
+      	<p>A presentation by someone</p>
+    </google-slide>
+    <google-slide class="googleyellow">
+        <h1>Polymer</h1>
+        <p>Iron Elements</p>
+        <p>Paper Elements(Material design)</p>
+        <p>Google Web Components</p>
+        <p>Gold Elements</p>
+        <p>Neon Elements</p>
+        <p>Platinum Elements</p>
+        <p>Molecules</p>
+        <p>Polymer Designer</p>
+        <p>Chrome Dev Editor</p>
+    </google-slide>
+    <google-slide class="googleblue center layout center-justified">
+        <video controls autobuffer onclick="this.play();" height="500"><source src="resources/videos/Welcome-to-the-World-of-Tomorrow.mp4" type="video/mp4"></video>
+    </google-slide>
+    <google-slide>
+        <h1>Iron Elements</h1>
+        <p><a target="_blank" href="https://elements.polymer-project.org/browse?package=iron-elements">https://elements.polymer-project.org/browse?package=iron-elements</a></p>
+    </google-slide>
+    <google-slide>
+      <h1>Material design with Polymer</h1>
+      <p>Application layout</p>
+      <p>Icons</p>
+      <p>Material controls</p>
+      <p>Dialogs, snackbars, and toasts</p>
+      <p>Material effects<p>
+      <p>Transitions</p>
+      <p>Scrolling techniques</p>
+    </google-slide>
+    <google-slide>
+        <h1>Application layout</h1>
+        <p><code>&lt;paper-header-panel&gt;</code><a target="_blank" href="https://elements.polymer-project.org/elements/paper-header-panel">[^]</a></p>
+        <p><code>&lt;paper-toolbar&gt;</code><a target="_blank" href="https://elements.polymer-project.org/elements/paper-toolbar">[^]</a></p>
+        <p><code>&lt;paper-drawer-panel&gt;</code><a target="_blank" href="https://elements.polymer-project.org/elements/paper-drawer-panel">[^]</a></p>
+    </google-slide>
+    <google-slide>
+        <h1>Icons<a target="_blank" href="https://elements.polymer-project.org/elements/iron-icons">[^]</a></h1>
+        <p><code>&lt;iron-icon&gt;</code><a target="_blank" href="https://elements.polymer-project.org/elements/iron-icon">[^]</a></p>
+    </google-slide>
+    <google-slide>
+        <h1>Material controls</h1>
+        <p><code>&lt;paper-button&gt;</code><a target="_blank" href="https://elements.polymer-project.org/elements/paper-button">[^]</a></p>
+        <p><code>&lt;paper-checkbox&gt;</code><a target="_blank" href="https://elements.polymer-project.org/elements/paper-checkbox">[^]</a></p>
+        <p><code>&lt;paper-toggle-button&gt;</code><a target="_blank" href="https://elements.polymer-project.org/elements/paper-toggle-button">[^]</a></p>
+        <p><code>&lt;paper-icon-button&gt;</code><a target="_blank" href="https://elements.polymer-project.org/elements/paper-icon-button">[^]</a></p>
+        <p><code>&lt;paper-fab&gt;</code><a target="_blank" href="https://elements.polymer-project.org/elements/paper-fab">[^]</a></p>
+        <p><code>&lt;paper-radio-group&gt;</code><a target="_blank" href="https://elements.polymer-project.org/elements/paper-radio-group">[^]</a></p>
+        <p><code>&lt;paper-radio-button&gt;</code><a target="_blank" href="https://elements.polymer-project.org/elements/paper-radio-button">[^]</a></p>
+        <p><code>&lt;paper-slider&gt;</code><a target="_blank" href="https://elements.polymer-project.org/elements/paper-slider">[^]</a></p>
+        <p><code>&lt;paper-progress&gt;</code><a target="_blank" href="https://elements.polymer-project.org/elements/paper-progress">[^]</a></p>
+        <p><code>&lt;paper-input&gt;</code><a target="_blank" href="https://elements.polymer-project.org/elements/paper-input">[^]</a></p>
+    </google-slide>
+    <google-slide>
+        <h1>Dialogs, snackbars, and toasts</h1>
+        <p><code>&lt;paper-dialog&gt;</code><a target="_blank" href="https://elements.polymer-project.org/elements/paper-dialog">[^]</a></p>
+        <p><code>&lt;paper-toast&gt;</code><a target="_blank" href="https://elements.polymer-project.org/elements/paper-toast">[^]</a></p>
+    </google-slide>
+    <google-slide>
+        <h1>Material effects</h1>
+        <p><code>&lt;paper-ripple&gt;</code><a target="_blank" href="https://elements.polymer-project.org/elements/paper-ripple">[^]</a></p>
+        <p><code>&lt;paper-material&gt;</code><a target="_blank" href="https://elements.polymer-project.org/elements/paper-material">[^]</a></p>
+    </google-slide>
+    <google-slide>
+        <h1>Transitions</h1>
+        <p><code>&lt;neon-animated-pages&gt;</code><a target="_blank" href="https://elements.polymer-project.org/elements/neon-animation">[^]</a></p>
+    </google-slide>
+    <google-slide>
+        <h1>Scrolling techniques</h1>
+        <p><code>&lt;paper-scroll-header-panel&gt;</code><a target="_blank" href="https://elements.polymer-project.org/elements/paper-scroll-header-panel">[^]</a></p>
+    </google-slide>
+    <google-slide>
+        <h1>Paper Elements</h1>
+        <p><a target="_blank" href="https://elements.polymer-project.org/browse?package=paper-elements">https://elements.polymer-project.org/browse?package=paper-elements</a></p>
+    </google-slide>
+    <google-slide>
+        <h1>Polymer Starter Kit</h1>
+        <p><a target="_blank" href="https://github.com/PolymerElements/polymer-starter-kit">https://github.com/PolymerElements/polymer-starter-kit</a></p>
+        <h1>Material Playground<a target="_blank" href="../MaterialPlayground/material-playground/">[^]</a></h1>
+        <p><a target="_blank" href="http://ebidel.github.io/material-playground/">ebidel.github.io/material-playground/</a></p>
+        <h1>Polymer Chrome App</h1>
+        <p><a target="_blank" href="https://github.com/PolymerLabs/polymerchromeapp">https://github.com/PolymerLabs/polymerchromeapp</a></p>
+    </google-slide>
+    <google-slide>
+        <h1>Google APIs</h1>
+        <p><code>&lt;google-signin&gt;</code><a target="_blank" href="https://elements.polymer-project.org/elements/google-signin">[^]</a></p>
+        <p><code>&lt;google-map&gt;</code><a target="_blank" href="https://elements.polymer-project.org/elements/google-map">[^]</a></p>
+        <p><code>&lt;google-youtube&gt;</code><a target="_blank" href="https://elements.polymer-project.org/elements/google-youtube">[^]</a></p>
+        <p><code>&lt;google-api-loader&gt;</code><a target="_blank" href="https://elements.polymer-project.org/elements/google-apis">[^]</a></p>
+        <p><a href="https://github.com/GoogleWebComponents" target="_blank">https://github.com/GoogleWebComponents</a></p>
+    </google-slide>
+    <google-slide>
+        <h1>Custom Elements</h1>
+        <p><a href="http://customelements.io/" target="_blank">http://customelements.io/</a></p>
+    </google-slide>
+    <google-slide>
+        <h1>Polymer Designer<a target="_blank" href="../Designer/designer/">[^]</a></h1>
+        <p><a target="_blank" href="http://www.polymer-project.org/tools/designer/">www.polymer-project.org/tools/designer/</a></p>
+        <h1>Mobile UI Elements</h1>
+        <p><a href="https://github.com/ForceDotComLabs/mobile-ui-elements" target="_blank">https://github.com/ForceDotComLabs/mobile-ui-elements</a></p>
+    </google-slide>
+    <google-slide>
+        <h1>Chrome Dev Editor</h1>
+        <p><a target="_blank" href="https://chrome.google.com/webstore/detail/chrome-dev-editor-develop/pnoffddplpippgcfjdhbmhkofpnaalpg?hl=en">https://chrome.google.com/webstore/detail/chrome-dev-editor-develop/pnoffddplpippgcfjdhbmhkofpnaalpg?hl=en</a></p>
+    </google-slide>
+    <google-slide class="center layout center-justified">
+        <video controls autobuffer onclick="this.play();" height="500"><source src="resources/videos/Welcome-to-the-World-of-Tomorrow.mp4" type="video/mp4"></video>
+        <p><a target="_blank" href="http://www.polymer-project.org/">http://www.polymer-project.org</a></p>
+        <p><a target="_blank" href="https://github.com/Polymer">https://github.com/Polymer</a></p>
+    </google-slide>
+    <google-slide-horizontal-wrapper>
+      <google-slide>
+        <h1>Multiple slides example</h1>
+        <p><code>&lt;google-slides&gt;</code></p>
+        <p><code>&lt;google-slide-horizontal-wrapper&gt;</code></p>
+        <p><code>&lt;google-slide&gt;</code></p>
+        <p><code>&lt;h1&gt;Multiple slides example&lt;/h1&gt;</code></p>
+        <p><code>&lt;p&gt;Enter recursion here&lt;/p&gt;</code></p>
+        <p><code>&lt;/google-slide&gt;</code></p>
+        <p><code>&lt;google-slide&gt;</code></p>
+        <p><code>&lt;h1&gt;Such meta! wow&lt;/h1&gt;</code></p>
+        <p><code>&lt;p&gt;Example with multiple slides on a page&lt;/p&gt;</code></p>
+        <p><code>&lt;/google-slide&gt;</code></p>
+        <p><code>&lt;/google-slide-horizontal-wrapper&gt;</code></p>
+        <p><code>&lt;/google-slides&gt;</code></p>
+      </google-slide>
+      <google-slide>
+        <h1>Such meta! wow</h1>
+        <p>Example with multiple slides on a page</p>
+      </google-slide>
+    </google-slide-horizontal-wrapper>
+  </google-slides>
+</body>
+</html>

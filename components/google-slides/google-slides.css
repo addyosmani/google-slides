@@ -1,0 +1,70 @@
+/*
+ * @license
+ * Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+ * This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+ * The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+ * The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+ * Code distributed by Google as part of the polymer project is also
+ * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+ */
+
+ neon-animated-pages {
+     position: absolute;
+     top: 0px;
+     right: 0;
+     bottom: 0;
+     left: 0;
+     font-size: 32px;
+     overflow: hidden;
+     background-color: white;
+     color: #333333;
+ }
+
+ .nav {
+   @apply(--layout-horizontal);
+   @apply(--layout-end-justified);
+
+   position: absolute;
+   bottom: 30px;
+   left: 0;
+   width: 100%;
+ }
+
+ .nav > div {
+     padding: 0 15px;
+ }
+
+#preBtn {
+    background: #999;
+}
+
+::content a, ::content a:active, ::content a:visited, ::content a:link {
+    padding: 0 5px;
+    color: #e7ad52 !important;
+    text-decoration: none;
+}
+
+::content .googleblue {
+    background: #4285ff;
+    color: #eee;
+}
+
+::content .googlered {
+    background: #db4441;
+    color: #eee;
+}
+
+::content .googleyellow {
+    background: #f4b400;
+    color: #eee;
+}
+
+::content .googlegreen {
+    background: #0fa758;
+    color: #eee;
+}
+
+::content .googlegray {
+    background: #424242;
+    color: #eee;
+}
